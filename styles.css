@@ -1,0 +1,71 @@
+h1 {
+  font-size: 40px;
+  font-family: Times New Roman;
+  margin-block: 5px;
+}
+
+h2 {
+  font-size: 10px;
+  font-family: Monospace;
+}
+
+h3 {
+  font-size: 10px;
+  font-family: Monospace;
+}
+
+#particles-js {
+  width: 100%;
+  height: 100vh;
+  background-image: url("b.jpg");
+}
+
+.profile-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-links li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.profile-links li img {
+  width: 24px;
+  height: 24px;
+  margin: 10px;
+}
+
+.profile-links li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 5px;
+}
+
+body {
+  background-color: white;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
