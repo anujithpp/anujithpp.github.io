@@ -47,8 +47,8 @@ h3 {
 }
 
 .profile-picture {
-  width: 150px;
-  height: 150px;
+  width: 175px;
+  height: 175px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 5px;
