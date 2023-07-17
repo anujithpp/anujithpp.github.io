@@ -17,7 +17,7 @@
           "color": "#000000"
         },
         "polygon": {
-          "nb_sides": 8
+          "nb_sides": 5
         }
       },
       "opacity": {
