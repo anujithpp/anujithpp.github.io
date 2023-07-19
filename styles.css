@@ -68,3 +68,8 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.profile-links li img:hover{
+  width: 27px;
+  height: 27px;
+}
