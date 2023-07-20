@@ -35,8 +35,8 @@ h3 {
 }
 
 .profile-links li img {
-  width: 24px;
-  height: 24px;
+  width: 27px;
+  height: 27px;
   margin: 10px;
 }
 
@@ -67,9 +67,4 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.profile-links li img:hover{
-  width: 27px;
-  height: 27px;
 }
