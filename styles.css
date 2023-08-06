@@ -38,6 +38,7 @@ h3 {
   width: 27px;
   height: 27px;
   margin: 10px;
+  border-radius: 20%;
 }
 
 .profile-links li a {
