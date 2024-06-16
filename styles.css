@@ -21,7 +21,7 @@ body {
   transform: translate(-50%, -50%);
   text-align: center;
   padding: 20px;
-  max-width: 90%; /* Adjusted to be responsive */
+  max-width: 90%;
 }
 
 h1 {
@@ -79,8 +79,8 @@ h2, h3 {
   }
 
   .profile-picture {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
   }
 
   .profile-links li img {
@@ -100,16 +100,16 @@ h2, h3 {
 
   .container {
     padding: 10px;
-    width: 90%; /* Ensure the container is wider on mobile devices */
+    width: 100%;
   }
 
   .profile-picture {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
   }
 
   .profile-links {
-    justify-content: center; /* Ensure links are centered */
+    justify-content: center;
   }
 
   .profile-links li {
@@ -122,23 +122,22 @@ h2, h3 {
   }
 }
 
-/* Added media query for larger screens */
 @media (min-width: 1024px) {
   .container {
-    max-width: 800px; /* Increase the max-width for larger screens */
+    max-width: 800px;
   }
 
   .profile-picture {
-    width: 200px; /* Adjust the profile picture size if needed */
+    width: 200px;
     height: 200px;
   }
 
   h1 {
-    font-size: 45px; /* Adjust the font size if needed */
+    font-size: 45px;
   }
 
   h2, h3 {
-    font-size: 12px; /* Adjust the font size if needed */
+    font-size: 12px;
   }
 
   .profile-links li img {
