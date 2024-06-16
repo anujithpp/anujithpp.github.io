@@ -25,22 +25,22 @@ body {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 50px; /* Increased font size */
   font-family: "Times New Roman";
   margin-block: 5px;
 }
 
 h2, h3 {
-  font-size: 10px;
+  font-size: 14px; /* Increased font size */
   font-family: Monospace;
 }
 
 .profile-picture {
-  width: 175px;
-  height: 175px;
+  width: 200px; /* Increased size */
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 5px;
+  margin-bottom: 10px; /* Increased margin */
 }
 
 .profile-links {
@@ -59,8 +59,8 @@ h2, h3 {
 }
 
 .profile-links li img {
-  width: 27px;
-  height: 27px;
+  width: 35px; /* Increased size */
+  height: 35px;
   border-radius: 20%;
 }
 
@@ -71,31 +71,31 @@ h2, h3 {
 
 @media (max-width: 768px) {
   h1 {
-    font-size: 30px;
+    font-size: 40px; /* Increased font size */
   }
 
   h2, h3 {
-    font-size: 8px;
+    font-size: 12px; /* Increased font size */
   }
 
   .profile-picture {
-    width: 150px;
-    height: 150px;
+    width: 160px; /* Increased size */
+    height: 160px;
   }
 
   .profile-links li img {
-    width: 24px;
-    height: 24px;
+    width: 30px; /* Increased size */
+    height: 30px;
   }
 }
 
 @media (max-width: 480px) {
   h1 {
-    font-size: 25px;
+    font-size: 35px; /* Increased font size */
   }
 
   h2, h3 {
-    font-size: 7px;
+    font-size: 10px; /* Increased font size */
   }
 
   .container {
@@ -104,8 +104,8 @@ h2, h3 {
   }
 
   .profile-picture {
-    width: 120px;
-    height: 120px;
+    width: 140px; /* Increased size */
+    height: 140px;
   }
 
   .profile-links {
@@ -117,8 +117,8 @@ h2, h3 {
   }
 
   .profile-links li img {
-    width: 20px;
-    height: 20px;
+    width: 25px; /* Increased size */
+    height: 25px;
   }
 }
 
@@ -128,20 +128,20 @@ h2, h3 {
   }
 
   .profile-picture {
-    width: 200px;
-    height: 200px;
+    width: 220px; /* Increased size */
+    height: 220px;
   }
 
   h1 {
-    font-size: 45px;
+    font-size: 55px; /* Increased font size */
   }
 
   h2, h3 {
-    font-size: 12px;
+    font-size: 16px; /* Increased font size */
   }
 
   .profile-links li img {
-    width: 30px;
-    height: 30px;
+    width: 40px; /* Increased size */
+    height: 40px;
   }
 }
