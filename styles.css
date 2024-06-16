@@ -108,11 +108,11 @@ h2, h3 {
   }
 
   .profile-links {
-    flex-direction: column;
+    justify-content: center; /* Ensure links are centered */
   }
 
   .profile-links li {
-    margin: 5px 0;
+    margin: 5px;
   }
 
   .profile-links li img {
