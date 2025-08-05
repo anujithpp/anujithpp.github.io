@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anujith.p.p - Developer | Gamer | Entrepreneur</title>
+    <meta name="description" content="Personal website of Anujith.p.p - Developer, Gamer, and Entrepreneur">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-text">Loading...</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">anujithpp</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="profile-image-container">
+                    <div class="profile-image">
+                        <img src="images/pro.webp" alt="Anujith.p.p Profile Picture" id="profile-img">
+                        <div class="profile-ring"></div>
+                    </div>
+                </div>
+                <h1 class="hero-name">
+                    <span class="greeting">Hello, I'm</span>
+                    <span class="name">Anujith.p.p</span>
+                </h1>
+                <div class="hero-title">
+                    <span class="typing-text" id="typing-text"></span>
+                    <span class="cursor">|</span>
+                </div>
+                <p class="hero-description">
+                    Passionate about creating innovative solutions and exploring new technologies. 
+                    Welcome to my digital space where creativity meets functionality.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-background">
+                <div class="floating-shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                    <div class="shape shape-4"></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-description">
+                        I'm a passionate developer who loves to create innovative solutions and explore cutting-edge technologies. 
+                        My journey spans across development, gaming, and entrepreneurship, always seeking new challenges and opportunities to grow.
+                    </p>
+                    <div class="skills-container">
+                        <h3 class="skills-title">What I Do</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <h4>Development</h4>
+                                <p>Creating robust and scalable applications with modern technologies</p>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-gamepad"></i>
+                                </div>
+                                <h4>Gaming</h4>
+                                <p>Exploring virtual worlds and understanding game mechanics</p>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <h4>Innovation</h4>
+                                <p>Turning ideas into reality through entrepreneurial ventures</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Links Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Let's Connect</h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">Feel free to reach out through any of these platforms</p>
+            </div>
+            <div class="social-links">
+                <a href="mailto:anujithpp@protonmail.com" class="social-link" data-tooltip="Email">
+                    <div class="social-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <span class="social-label">Email</span>
+                </a>
+                <a href="https://twitter.com/anujithpp?t=TVkNLkpF1H44juYTghBgPg&s=09" target="_blank" class="social-link" data-tooltip="Twitter">
+                    <div class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <span class="social-label">Twitter</span>
+                </a>
+                <a href="https://instagram.com/anujithpp?igshid=ZDc4ODBmNjlmNQ==" target="_blank" class="social-link" data-tooltip="Instagram">
+                    <div class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <span class="social-label">Instagram</span>
+                </a>
+                <a href="https://www.linkedin.com/in/anujith-pp-87b21124a" target="_blank" class="social-link" data-tooltip="LinkedIn">
+                    <div class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                    <span class="social-label">LinkedIn</span>
+                </a>
+                <a href="https://github.com/anujithpp" target="_blank" class="social-link" data-tooltip="GitHub">
+                    <div class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <span class="social-label">GitHub</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Anujith.p.p. All rights reserved.</p>
+                <p>Made with <i class="fas fa-heart"></i> and modern web technologies</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
