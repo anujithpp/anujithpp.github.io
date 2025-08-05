@@ -28,7 +28,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-        with:
-          # If you have a build directory, set it here, e.g.:
-          # folder: 'dist'
-          # Otherwise, omit 'with' to deploy the root
