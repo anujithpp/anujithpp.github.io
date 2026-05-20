@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTypewriter();
   initActiveNavHighlight();
   initClipboardUtility();
+  initMobileMenu();
 });
 
 /**
@@ -209,5 +210,63 @@ function initClipboardUtility() {
           clipboardMsg.textContent = 'copy';
         }, 2500);
       });
+  });
+}
+
+/**
+ * 6. Mobile Hamburger Menu Toggle
+ * Manages the slide-in navigation drawer for small screens.
+ */
+function initMobileMenu() {
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+  const navOverlay = document.getElementById('nav-overlay');
+
+  if (!navToggle || !navLinks) return;
+
+  const closeMenu = () => {
+    navToggle.classList.remove('active');
+    navLinks.classList.remove('active');
+    if (navOverlay) navOverlay.classList.remove('active');
+    navToggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  };
+
+  const openMenu = () => {
+    navToggle.classList.add('active');
+    navLinks.classList.add('active');
+    if (navOverlay) navOverlay.classList.add('active');
+    navToggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  };
+
+  navToggle.addEventListener('click', () => {
+    const isOpen = navToggle.classList.contains('active');
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  // Close drawer when a nav link is clicked
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
+
+  // Close drawer when clicking the overlay backdrop
+  if (navOverlay) {
+    navOverlay.addEventListener('click', () => {
+      closeMenu();
+    });
+  }
+
+  // Close drawer on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navToggle.classList.contains('active')) {
+      closeMenu();
+    }
   });
 }

@@ -33,7 +33,12 @@
       
       <!-- Desktop & Tablet Navigation -->
       <nav aria-label="Main Navigation">
-        <ul class="nav-links">
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
           <li><a href="#about" id="nav-link-about">About</a></li>
           <li><a href="#skills" id="nav-link-skills">Skills</a></li>
           <li><a href="#projects" id="nav-link-projects">Projects</a></li>
@@ -49,6 +54,9 @@
         </ul>
       </nav>
     </div>
+    
+    <!-- Mobile Nav Overlay Backdrop -->
+    <div class="nav-overlay" id="nav-overlay"></div>
     
     <!-- Dynamic Scroll Progress Indicator -->
     <div class="scroll-progress-container" aria-hidden="true">
