@@ -5,6 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   // Execute interactive initializations
+  initThemeToggle();
   initScrollHeader();
   initScrollReveal();
   initTypewriter();
@@ -267,6 +268,36 @@ function initMobileMenu() {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && navToggle.classList.contains('active')) {
       closeMenu();
+    }
+  });
+}
+
+/**
+ * 7. Dark / Light Theme Toggle
+ * Persists user preference in localStorage.
+ */
+function initThemeToggle() {
+  const themeToggle = document.getElementById('theme-toggle');
+  if (!themeToggle) return;
+
+  const STORAGE_KEY = 'anujith-theme';
+
+  // Apply saved theme on load (default: dark)
+  const savedTheme = localStorage.getItem(STORAGE_KEY);
+  if (savedTheme === 'light') {
+    document.body.classList.add('light-mode');
+    themeToggle.setAttribute('aria-label', 'Switch to dark mode');
+  }
+
+  themeToggle.addEventListener('click', () => {
+    const isLight = document.body.classList.toggle('light-mode');
+
+    if (isLight) {
+      localStorage.setItem(STORAGE_KEY, 'light');
+      themeToggle.setAttribute('aria-label', 'Switch to dark mode');
+    } else {
+      localStorage.setItem(STORAGE_KEY, 'dark');
+      themeToggle.setAttribute('aria-label', 'Switch to light mode');
     }
   });
 }

@@ -52,6 +52,55 @@
   --radius-full: 9999px;
 }
 
+/* --- Light Mode Variable Overrides --- */
+body.light-mode {
+  --bg-color: #f8fafc;
+  --card-color: #ffffff;
+  --surface-color: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --glow-primary: rgba(16, 185, 129, 0.1);
+  --glow-secondary: rgba(0, 240, 255, 0.1);
+  --glow-border: rgba(16, 185, 129, 0.2);
+  color: #0f172a;
+  background-color: #f8fafc;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(0, 240, 255, 0.04) 0%, transparent 40%);
+}
+
+/* Override html background so it doesn't bleed through as dark */
+body.light-mode ~ html,
+html:has(body.light-mode) {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+/* Smooth color transition for theme switching */
+body,
+header,
+.navbar,
+section,
+footer,
+.terminal-mockup,
+.terminal-header,
+.terminal-body,
+.project-card,
+.skill-card,
+.contact-item,
+.timeline-card,
+.journey-card,
+.btn,
+.btn-primary,
+.btn-secondary,
+.nav-resume-btn,
+.section-tag,
+.logo,
+.nav-links a,
+.theme-toggle {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
 /* --- Base & Reset Styles --- */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -62,9 +111,6 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px; /* Offset for sticky nav */
-  background-color: var(--bg-color);
-  color: var(--text-primary);
-  font-family: var(--font-body);
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -73,11 +119,13 @@ html {
 body {
   overflow-x: hidden;
   background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.6;
   background-image: 
     radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.03) 0%, transparent 40%),
     radial-gradient(circle at 90% 80%, rgba(0, 240, 255, 0.03) 0%, transparent 40%);
   background-attachment: fixed;
-  line-height: 1.6;
 }
 
 /* Custom Scrollbar */
@@ -246,6 +294,11 @@ header.scrolled {
   -webkit-backdrop-filter: blur(16px);
 }
 
+body.light-mode header.scrolled {
+  background: rgba(248, 250, 252, 0.85);
+  border-bottom: 1px solid #e2e8f0;
+}
+
 header.scrolled .navbar {
   height: 64px;
 }
@@ -263,6 +316,44 @@ header.scrolled .navbar {
 
 .logo span {
   color: var(--accent-primary);
+}
+
+/* --- Theme Toggle Button --- */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  padding: 0;
+  border-radius: var(--radius-sm);
+  transition: color 0.3s ease, transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  color: var(--accent-primary);
+  transform: scale(1.1);
+}
+
+/* In dark mode (default): show moon, hide sun */
+.theme-toggle .icon-sun {
+  display: none;
+}
+.theme-toggle .icon-moon {
+  display: block;
+}
+
+/* In light mode: show sun, hide moon */
+body.light-mode .theme-toggle .icon-sun {
+  display: block;
+}
+body.light-mode .theme-toggle .icon-moon {
+  display: none;
 }
 
 .nav-links {
@@ -1169,6 +1260,215 @@ footer {
   font-family: var(--font-mono);
 }
 
+/* ================================================================
+   Light Mode — Hardcoded Color Overrides
+   (for elements that don't use CSS variables directly)
+   ================================================================ */
+
+/* Glass panel utility */
+body.light-mode .glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid #e2e8f0;
+}
+
+/* Buttons */
+body.light-mode .btn-primary {
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+}
+
+body.light-mode .btn-secondary {
+  background: rgba(241, 245, 249, 0.8);
+  color: var(--text-primary);
+  border: 1px solid #e2e8f0;
+}
+
+body.light-mode .btn-secondary:hover {
+  border-color: var(--accent-secondary);
+  box-shadow: 0 6px 25px rgba(0, 240, 255, 0.15);
+}
+
+/* Terminal Mockup */
+body.light-mode .terminal-mockup {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 0 40px rgba(16, 185, 129, 0.05);
+}
+
+body.light-mode .terminal-header {
+  background: #e2e8f0;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+body.light-mode .terminal-body {
+  color: #475569;
+}
+
+body.light-mode .terminal-input {
+  color: #0f172a;
+}
+
+body.light-mode .terminal-output {
+  color: #475569;
+}
+
+body.light-mode .terminal-output span.cyan {
+  color: #0891b2;
+}
+
+body.light-mode .terminal-output span.green {
+  color: #059669;
+}
+
+/* About section gradient */
+body.light-mode #about {
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+}
+
+/* Journey cards */
+body.light-mode .journey-card {
+  border: 1px solid #e2e8f0;
+}
+
+body.light-mode .journey-card:hover {
+  border-color: rgba(16, 185, 129, 0.3);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06), 0 0 20px rgba(16, 185, 129, 0.08);
+}
+
+/* Section tag */
+body.light-mode .section-tag {
+  color: #059669;
+}
+
+/* Skill cards */
+body.light-mode .skill-card {
+  border: 1px solid #e2e8f0;
+}
+
+body.light-mode .skill-card:hover {
+  border-color: rgba(16, 185, 129, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06), 0 0 15px rgba(16, 185, 129, 0.08);
+}
+
+/* Project cards */
+body.light-mode .project-card {
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .project-card:hover {
+  border-color: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08), 0 0 30px rgba(0, 240, 255, 0.08);
+}
+
+body.light-mode .project-type {
+  background: rgba(0, 240, 255, 0.06);
+  border: 1px solid rgba(0, 240, 255, 0.15);
+}
+
+body.light-mode .project-badge.progress {
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+body.light-mode .project-tech-tag {
+  background: rgba(15, 23, 42, 0.04);
+  border: 1px solid #e2e8f0;
+  color: var(--text-primary);
+}
+
+/* Timeline / Education */
+body.light-mode .timeline-card {
+  border: 1px solid #e2e8f0;
+}
+
+body.light-mode .timeline-card:hover {
+  border-color: rgba(16, 185, 129, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06), 0 0 15px rgba(16, 185, 129, 0.08);
+}
+
+/* Contact section */
+body.light-mode #contact {
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+body.light-mode .contact-item {
+  border: 1px solid #e2e8f0;
+}
+
+body.light-mode .contact-item:hover {
+  border-color: rgba(16, 185, 129, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06), 0 0 15px rgba(16, 185, 129, 0.08);
+}
+
+body.light-mode .contact-item-icon {
+  background: rgba(15, 23, 42, 0.04);
+}
+
+body.light-mode .contact-item:hover .contact-item-icon {
+  background: rgba(16, 185, 129, 0.08);
+}
+
+/* Resume contact card */
+body.light-mode .contact-item.contact-resume-item {
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.15);
+}
+
+body.light-mode .contact-item.contact-resume-item:hover {
+  box-shadow: 0 8px 30px rgba(16, 185, 129, 0.25), 0 0 15px rgba(16, 185, 129, 0.1);
+}
+
+/* Nav resume button */
+body.light-mode .nav-resume-btn {
+  background: rgba(16, 185, 129, 0.08);
+}
+
+body.light-mode .nav-resume-btn:hover {
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+}
+
+/* Footer */
+body.light-mode footer {
+  background: #f1f5f9;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* Scroll progress bar — keep gradient as-is */
+
+/* Scrollbar */
+body.light-mode ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+body.light-mode ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-color: #f1f5f9;
+}
+
+body.light-mode ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Selection */
+body.light-mode ::selection {
+  background: rgba(16, 185, 129, 0.2);
+  color: #0f172a;
+}
+
+/* Nav links */
+body.light-mode .nav-links a:hover,
+body.light-mode .nav-links a.active {
+  color: #059669;
+}
+
+body.light-mode .nav-links a::after {
+  background: #059669;
+}
+
+/* Hamburger bars */
+body.light-mode .hamburger-bar {
+  background: var(--text-primary);
+}
+
 /* --- Hamburger Toggle Button --- */
 .nav-toggle {
   display: none;
@@ -1340,6 +1640,19 @@ footer {
     width: 100%;
     justify-content: center;
     border-radius: var(--radius-md) !important;
+  }
+}
+
+/* Light mode mobile drawer override */
+@media (max-width: 768px) {
+  body.light-mode .nav-links {
+    background: rgba(248, 250, 252, 0.97);
+    border-left: 1px solid #e2e8f0;
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
+  }
+
+  body.light-mode .nav-overlay.active {
+    background: rgba(0, 0, 0, 0.2);
   }
 }
 
