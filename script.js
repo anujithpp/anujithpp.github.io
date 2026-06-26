@@ -10,7 +10,55 @@ document.addEventListener('DOMContentLoaded', () => {
   initTypewriter();
   initActiveNavHighlight();
   initMobileMenu();
+  initEmailClipboard();
 });
+
+/**
+ * Email Copy-to-Clipboard
+ */
+function initEmailClipboard() {
+  const emailCard = document.getElementById('contact-email-card');
+  const emailAddress = document.getElementById('email-address');
+  const clipboardMsg = document.getElementById('email-clipboard-msg');
+
+  if (!emailCard || !emailAddress || !clipboardMsg) return;
+
+  const copyEmail = () => {
+    const email = emailAddress.textContent.trim();
+    navigator.clipboard.writeText(email).then(() => {
+      clipboardMsg.textContent = 'copied!';
+      clipboardMsg.classList.add('copied');
+      setTimeout(() => {
+        clipboardMsg.textContent = 'copy';
+        clipboardMsg.classList.remove('copied');
+      }, 2000);
+    }).catch(() => {
+      // Fallback for older browsers
+      const textArea = document.createElement('textarea');
+      textArea.value = email;
+      textArea.style.position = 'fixed';
+      textArea.style.opacity = '0';
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      clipboardMsg.textContent = 'copied!';
+      clipboardMsg.classList.add('copied');
+      setTimeout(() => {
+        clipboardMsg.textContent = 'copy';
+        clipboardMsg.classList.remove('copied');
+      }, 2000);
+    });
+  };
+
+  emailCard.addEventListener('click', copyEmail);
+  emailCard.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      copyEmail();
+    }
+  });
+}
 
 /**
  * Scroll-driven Header and Progress Bar
