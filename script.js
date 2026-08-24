@@ -121,6 +121,12 @@ function initTypewriter() {
 
   const phrasesData = typewriterSpan.getAttribute('data-phrases');
   const phrases = phrasesData ? JSON.parse(phrasesData) : ["CS Student", "ML Enthusiast"];
+
+  // Respect users who prefer reduced motion — show the first phrase statically.
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    typewriterSpan.textContent = phrases[0];
+    return;
+  }
   
   let phraseIndex = 0;
   let charIndex = 0;
