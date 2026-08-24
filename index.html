@@ -6,6 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anujith | Portfolio</title>
 
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://anujithpp.github.io/">
+
+  <!-- Browser UI theme color (light / dark) -->
+  <meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1814" media="(prefers-color-scheme: dark)">
+
   <!-- Favicon SVG Data URI -->
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23faf9f7'/%3E%3Ctext x='16' y='22' font-size='18' font-weight='700' font-family='system-ui,sans-serif' fill='%23e07a5f' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
@@ -23,12 +30,63 @@
     content="Integrated M.Sc. Computer Science student at CUSAT specializing in AI and Data Science. Passionate about machine learning, Edge AI systems, and open-source contributions.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://anujithpp.github.io/">
+  <meta property="og:site_name" content="Anujith">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://anujithpp.github.io/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt"
+    content="Anujith — Integrated M.Sc. Computer Science (AI &amp; Data Science) student at CUSAT, Kochi.">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Anujith | Integrated M.Sc. CS &amp; AI Specialist">
+  <meta name="twitter:description"
+    content="Integrated M.Sc. Computer Science student at CUSAT specializing in AI and Data Science. Passionate about machine learning, Edge AI systems, and open-source contributions.">
+  <meta name="twitter:image" content="https://anujithpp.github.io/og-image.png">
+  <meta name="twitter:image:alt"
+    content="Anujith — Integrated M.Sc. Computer Science (AI &amp; Data Science) student at CUSAT, Kochi.">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Structured Data: Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Anujith",
+    "url": "https://anujithpp.github.io/",
+    "image": "https://anujithpp.github.io/og-image.png",
+    "jobTitle": "Integrated M.Sc. Computer Science (AI & Data Science) Student",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "Cochin University of Science and Technology (CUSAT)"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kochi",
+      "addressRegion": "Kerala",
+      "addressCountry": "IN"
+    },
+    "sameAs": [
+      "https://github.com/anujithpp"
+    ],
+    "knowsAbout": [
+      "Machine Learning",
+      "Edge AI",
+      "Computer Vision",
+      "Data Science",
+      "Software Engineering"
+    ]
+  }
+  </script>
 </head>
 
 <body>
+
+  <!-- Skip to main content link for keyboard and screen-reader users -->
+  <a href="#main-content" class="skip-link">Skip to content</a>
 
   <!-- Sticky Backdrop Glass Navigation Header -->
   <header id="header">
@@ -97,6 +155,9 @@
       <div class="scroll-progress-bar" id="progress-bar"></div>
     </div>
   </header>
+
+  <!-- Main Content -->
+  <main id="main-content" tabindex="-1">
 
   <!-- Hero Section -->
   <section id="hero" aria-label="Introduction">
@@ -875,6 +936,8 @@
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- Footer -->
   <footer>
